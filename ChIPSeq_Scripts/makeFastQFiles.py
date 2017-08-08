@@ -4,11 +4,11 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-def extractFastqHeads (infile, pathToOutFile):
+def extractFastqHeads(infile, pathToOutFile):
     
 
-    infile = open (infile,'r')
-    outfile = open (pathToOutFile+"headsFromHumanRNAFastq.txt",'w')
+    infile = open(infile,'r')
+    outfile = open(pathToOutFile+"headsFromHumanRNAFastq.txt",'w')
           
     for line in infile:
         if line.startswith("DR"):
@@ -21,10 +21,10 @@ def extractFastqHeads (infile, pathToOutFile):
     
     
     
-def extractFaqtQEntries (fastqFile, pathToOutfile, fastqOutName):
-    fastqFile = open (fastqFile,'r')
-    tagsFile =  open (pathToOutfile+"headsFromHumanRNAFastq.txt")
-    outFile = open (pathToOutfile+fastqOutName,"w")
+def extractFaqtQEntries(fastqFile, pathToOutfile, fastqOutName):
+    fastqFile = open(fastqFile,'r')
+    tagsFile =  open(pathToOutfile+"headsFromHumanRNAFastq.txt")
+    outFile = open(pathToOutfile+fastqOutName,"w")
 
     catedHeads={}
 
