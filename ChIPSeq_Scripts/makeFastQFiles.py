@@ -12,7 +12,6 @@ def extractFastqHeads(infile, pathToOutFile):
           
     for line in infile:
         if line.startswith("DR"):
-            #continue
             lineHeads = line.split("\t")
             outfile.write(lineHeads[0]+"\n")
     
@@ -37,7 +36,6 @@ def extractFaqtQEntries(fastqFile, pathToOutfile, fastqOutName):
     for line in fastqFile:
         if line.startswith("@"):
             lineHeads = line.split(" ")
-            """Uncomment while running for sam file """
             lineHeads[0]=lineHeads[0][1:]  
             if catedHeads.has_key(lineHeads[0]):
                 outFile.write(line)
