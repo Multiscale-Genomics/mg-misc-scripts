@@ -34,6 +34,6 @@ for key,value in dictList.iteritems():
         continue
         
     if counter >= coverageLength:
-        print key-coverageLength, key  
+        print key-coverageLength, key, value  
                
     prev = key
