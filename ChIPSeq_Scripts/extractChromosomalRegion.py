@@ -18,17 +18,17 @@ outputFile = open(args.outfile, 'w')
 counter = 0; genomeStart = args.gStart ; genomeEnd = args.gEnd ; lineNum = 0
 
 
-outfile.write (inputFile.readline())
+outputFile.write (inputFile.readline())
 
 for line in inputFile :
     counter += 60
     lineNum += 1
     if counter - genomeStart  >= 1 and counter - genomeStart < 60:
-        outfile.write (line)
+        outputFile.write (line)
     if counter >= genomeStart and counter <= genomeEnd :
         print genomeStart, genomeEnd
         print lineNum, counter
-        outfile.write (line)
+        outputFile.write (line)
     
     elif counter > genomeEnd : 
         break

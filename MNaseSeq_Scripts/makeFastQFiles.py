@@ -6,12 +6,13 @@ parser = argparse.ArgumentParser()
 
 def extractFastqHeads (infile, pathToOutFile):
     infile = open(infile,'r')
-    outfile = open(pathToOutFile+"headsFromHumanRNAFastq.txt",'w')
+    outfile = open(pathToOutFile+"headsFromSamFile.txt",'w')
           
     for line in infile:
-        if line.startswith("ER"):
+        if line.startswith("DR"):
             #continue
             lineHeads = line.split("\t")
+            print lineHeads[0]
             outfile.write(lineHeads[0]+"\n")
     
     infile.close()
@@ -20,7 +21,7 @@ def extractFastqHeads (infile, pathToOutFile):
     
 def extractFaqtQEntries (fastqFile, pathToOutfile, fastqOutName):
     fastqFile = open(fastqFile,'r')
-    tagsFile = open(pathToOutfile+"headsFromHumanRNAFastq.txt")
+    tagsFile = open(pathToOutfile+"headsFromSamFile.txt")
     outFile = open(pathToOutfile+fastqOutName,"w")
 
     catedHeads={}
@@ -34,7 +35,6 @@ def extractFaqtQEntries (fastqFile, pathToOutfile, fastqOutName):
     for line in fastqFile:
         if line.startswith("@"):
             lineHeads = line.split(" ")
-            """Uncomment while running for sam file """
             lineHeads[0]=lineHeads[0][1:]  
             if catedHeads.has_key(lineHeads[0]):
                 outFile.write(line)
