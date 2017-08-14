@@ -10,9 +10,7 @@ def extractFastqHeads (infile, pathToOutFile):
           
     for line in infile:
         if line.startswith("DR"):
-            #continue
             lineHeads = line.split("\t")
-            print lineHeads[0]
             outfile.write(lineHeads[0]+"\n")
     
     infile.close()
