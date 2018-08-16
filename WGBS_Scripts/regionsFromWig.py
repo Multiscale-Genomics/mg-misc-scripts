@@ -52,9 +52,3 @@ for key,value in dictList.iteritems():
     if counter >= coverageLength and peakNum >= minPeakNum :
         print key-coverageLength, key  
         print peaks
-        
-               
-    
-    
-
-
